@@ -1,0 +1,8 @@
+node_modules
+src
+static-data
+hooks
+index.tsx
+tsup.config.ts
+tsconfig.json
+.gitignore
