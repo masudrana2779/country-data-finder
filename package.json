@@ -1,7 +1,7 @@
 {
   "name": "country-data-finder",
-  "version": "1.0.3",
-  "description": "Get country name, flag URL, and states/divisions by country code or country name",
+  "version": "1.0.4",
+  "description": "Get country name, flag URL, postal code format, and states/divisions by country code or country name",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

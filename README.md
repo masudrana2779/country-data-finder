@@ -1,12 +1,26 @@
-# country-data-finder
+# Country Data Finder
 
-A lightweight package to get **country name**, **flag URL**, and **states/divisions** by providing a country code (e.g. `"US"`) or country name (e.g. `"United States"`).
+A comprehensive, lightweight library to get **country name**, **country code**, **flag URL**, **postal code format**, and **states/divisions** by providing a country code or country name.
 
-- Full **TypeScript** support with built-in type definitions
-- Works with **Node.js**, **React**, **Next.js**, or any JavaScript/TypeScript project
-- Includes a **React Hook** (`useCountryInfo`) with memoization
-- Covers **245 countries** with their states/divisions
-- Zero dependencies (React is optional)
+[![npm version](https://img.shields.io/npm/v/country-data-finder.svg)](https://www.npmjs.com/package/country-data-finder)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dm/country-data-finder.svg)](https://www.npmjs.com/package/country-data-finder)
+
+**GitHub Repository:** [https://github.com/masudrana2779/country-data-finder](https://github.com/masudrana2779/country-data-finder)
+
+---
+
+## Features
+
+- **Comprehensive Data** — 249 countries with states/divisions, postal code formats, and flag URLs
+- **TypeScript Support** — Full built-in type definitions
+- **React Hook** — `useCountryInfo()` with memoization for React 16.8+
+- **Universal** — Works with Node.js, React, Next.js, or any JavaScript/TypeScript project
+- **Zero Dependencies** — Lightweight and self-contained (React is optional peer dependency)
+- **Flexible Search** — Look up by ISO 3166-1 alpha-2 code or country name (case-insensitive)
+- **Postal Code Patterns** — Regex-based postal/zip code formats for validation
+
+---
 
 ## Installation
 
@@ -21,6 +35,8 @@ yarn add country-data-finder
 ```bash
 pnpm add country-data-finder
 ```
+
+---
 
 ## Quick Start
 
@@ -48,6 +64,8 @@ console.log(info2);
 // }
 ```
 
+---
+
 ## API Reference
 
 ### `getCountryInfo(input: string): CountryInfo`
@@ -65,6 +83,7 @@ const result = getCountryInfo("US");
 ```
 
 If the input does not match any country:
+
 ```ts
 const result = getCountryInfo("XYZ");
 // { countryName: "XYZ", countryCode: "", flagUrl: null, states: [] }
@@ -90,7 +109,7 @@ const states2 = getStates("United Kingdom");
 
 ### `getAllCountries(): { name: string; code: string }[]`
 
-Returns a list of all 245 countries with name and code.
+Returns a list of all 249 countries with name and code.
 
 ```ts
 import { getAllCountries } from "country-data-finder";
@@ -118,7 +137,9 @@ function CountryCard({ code }: { code: string }) {
   return (
     <div>
       {flagUrl && <img src={flagUrl} alt={countryName} />}
-      <h2>{countryName} ({countryCode})</h2>
+      <h2>
+        {countryName} ({countryCode})
+      </h2>
       <p>{states.length} states/divisions</p>
       <ul>
         {states.map((state) => (
@@ -130,6 +151,21 @@ function CountryCard({ code }: { code: string }) {
 }
 ```
 
+---
+
+## Available Data
+
+Each country entry includes:
+
+| Field      | Type       | Description                                      |
+| ---------- | ---------- | ------------------------------------------------ |
+| `name`     | `string`   | English country name                             |
+| `code`     | `string`   | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code |
+| `postCode` | `string`   | Postal/zip code regex pattern (empty if none)    |
+| `states`   | `string[]` | List of states, provinces, or divisions           |
+
+---
+
 ## TypeScript Types
 
 The package exports the following types:
@@ -137,7 +173,7 @@ The package exports the following types:
 ```ts
 import type { CountryInfo, Country } from "country-data-finder";
 
-// CountryInfo - returned by getCountryInfo() and useCountryInfo()
+// CountryInfo — returned by getCountryInfo() and useCountryInfo()
 interface CountryInfo {
   countryName: string;
   countryCode: string;
@@ -145,22 +181,39 @@ interface CountryInfo {
   states: string[];
 }
 
-// Country - shape of each country in the data
+// Country — shape of each country in the data
 interface Country {
   name: string;
   code: string;
+  postCode: string;
   states: string[];
 }
 ```
 
+---
+
 ## Supported Input Formats
 
-| Input           | Example         | Description                     |
-| --------------- | --------------- | ------------------------------- |
-| Country code    | `"US"`, `"GB"`  | ISO 3166-1 alpha-2 code         |
-| Country name    | `"United States"` | Full country name              |
-| Case-insensitive| `"united states"` | Works with any casing         |
+| Input            | Example            | Description                |
+| ---------------- | ------------------ | -------------------------- |
+| Country code     | `"US"`, `"GB"`     | ISO 3166-1 alpha-2 code   |
+| Country name     | `"United States"`  | Full country name          |
+| Case-insensitive | `"united states"`  | Works with any casing      |
+
+---
+
+## Contribute
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the [repository](https://github.com/masudrana2779/country-data-finder)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
 
 ## License
 
-MIT
+This project is licensed under the **MIT License** — see the [LICENSE](https://github.com/masudrana2779/country-data-finder/blob/main/LICENSE) file for details.
