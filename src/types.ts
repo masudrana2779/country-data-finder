@@ -1,6 +1,7 @@
 export interface Country {
   name: string;
   code: string;
+  postCode: string;
   states: string[];
 }
 
