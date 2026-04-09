@@ -13,25 +13,53 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masudrana2779/country-data-finder.git"
+  },
+  "homepage": "https://github.com/masudrana2779/country-data-finder#readme",
+  "bugs": {
+    "url": "https://github.com/masudrana2779/country-data-finder/issues"
+  },
   "keywords": [
     "country",
     "country-info",
+    "country-data",
     "country-flag",
     "country-states",
     "country-code",
+    "country-list",
+    "postal-code",
+    "post-code",
+    "zip-code",
     "flag",
     "states",
     "divisions",
-    "react-hook"
+    "iso-3166",
+    "react-hook",
+    "typescript",
+    "nodejs"
   ],
-  "author": "MasudRana",
+  "author": {
+    "name": "MasudRana",
+    "url": "https://github.com/masudrana2779"
+  },
   "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/masudrana2779"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "peerDependencies": {
     "react": ">=16.8.0"
   },

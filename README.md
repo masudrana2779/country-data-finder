@@ -157,12 +157,12 @@ function CountryCard({ code }: { code: string }) {
 
 Each country entry includes:
 
-| Field      | Type       | Description                                      |
-| ---------- | ---------- | ------------------------------------------------ |
-| `name`     | `string`   | English country name                             |
+| Field      | Type       | Description                                                                 |
+| ---------- | ---------- | --------------------------------------------------------------------------- |
+| `name`     | `string`   | English country name                                                        |
 | `code`     | `string`   | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code |
-| `postCode` | `string`   | Postal/zip code regex pattern (empty if none)    |
-| `states`   | `string[]` | List of states, provinces, or divisions           |
+| `postCode` | `string`   | Postal/zip code regex pattern (empty if none)                               |
+| `states`   | `string[]` | List of states, provinces, or divisions                                     |
 
 ---
 
@@ -194,11 +194,11 @@ interface Country {
 
 ## Supported Input Formats
 
-| Input            | Example            | Description                |
-| ---------------- | ------------------ | -------------------------- |
-| Country code     | `"US"`, `"GB"`     | ISO 3166-1 alpha-2 code   |
-| Country name     | `"United States"`  | Full country name          |
-| Case-insensitive | `"united states"`  | Works with any casing      |
+| Input            | Example           | Description             |
+| ---------------- | ----------------- | ----------------------- |
+| Country code     | `"US"`, `"GB"`    | ISO 3166-1 alpha-2 code |
+| Country name     | `"United States"` | Full country name       |
+| Case-insensitive | `"united states"` | Works with any casing   |
 
 ---
 
